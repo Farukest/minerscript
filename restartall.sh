@@ -63,14 +63,14 @@ do
 		rm -rf /root/$which_miner
 	fi
 
-	ftfolder=/home/$ft_file_name
-	if [ -d "$ftfolder" ]; then
-		echo $ft_file_name
-		echo 'FT KLASORU SILINIYOR ...' $ft_file_name
-		rm -rf /home/$ft_file_name/
-	fi
+	# ftfolder=/home/$ft_file_name
+	# if [ -d "$ftfolder" ]; then
+		# echo $ft_file_name
+		# echo 'FT KLASORU SILINIYOR ...' $ft_file_name
+		# rm -rf /home/$ft_file_name/
+	# fi
 
-	cd /home/ && git clone https://github.com/Farukest/ft_pscs_simple.git $ft_file_name
+	# cd /home/ && git clone https://github.com/Farukest/ft_pscs_simple.git $ft_file_name
 
 	#home pi hnt miner altındaki referans alınan sys.configi replace edilebilen dosya
 	mkdir /root/$which_miner
@@ -96,21 +96,21 @@ do
 
 
 
-	chmod 777 /home/$ft_file_name/ftmiddle_configs/conf1.json
-	sed -i 's/"replace_listen_port_address"/'${listen_port}'/g' /home/$ft_file_name/ftmiddle_configs/conf1.json
-	sed -i 's/"replace_serv_port_up"/'${docker_miner_start_port}'/g' /home/$ft_file_name/ftmiddle_configs/conf1.json
-	sed -i 's/"replace_serv_port_down"/'${docker_miner_start_port}'/g' /home/$ft_file_name/ftmiddle_configs/conf1.json
+	# chmod 777 /home/$ft_file_name/ftmiddle_configs/conf1.json
+	# sed -i 's/"replace_listen_port_address"/'${listen_port}'/g' /home/$ft_file_name/ftmiddle_configs/conf1.json
+	# sed -i 's/"replace_serv_port_up"/'${docker_miner_start_port}'/g' /home/$ft_file_name/ftmiddle_configs/conf1.json
+	# sed -i 's/"replace_serv_port_down"/'${docker_miner_start_port}'/g' /home/$ft_file_name/ftmiddle_configs/conf1.json
 
-	chmod 777 /home/$ft_file_name/ftmiddle_configs/conf1.json
-	sed -i 's/"replace_gateway_id"/"'${gateway_ID}'"/g' /home/$ft_file_name/ftmiddle_configs/conf1.json
+	# chmod 777 /home/$ft_file_name/ftmiddle_configs/conf1.json
+	# sed -i 's/"replace_gateway_id"/"'${gateway_ID}'"/g' /home/$ft_file_name/ftmiddle_configs/conf1.json
 
-	chmod 700 /home/$ft_file_name/first.sh
-	cd /home/$ft_file_name/ && ./first.sh $ft_file_name
+	# chmod 700 /home/$ft_file_name/first.sh
+	# cd /home/$ft_file_name/ && ./first.sh $ft_file_name
 
 
 
-	echo 'Jobs adding to cron..'
-	cd /home/$ft_file_name/ && ./addcron.sh $ft_file_name $which_miner
+	# echo 'Jobs adding to cron..'
+	# cd /home/$ft_file_name/ && ./addcron.sh $ft_file_name $which_miner
 
 	echo 'SUCCESS THAT IS ALL..'
 	
