@@ -114,13 +114,15 @@ do
 
 	echo 'SUCCESS THAT IS ALL..'
 	
+	echo "Miner ismi 6 saniye içinde gelecek..  "
+
+	sleep 3
+
+	echo $(docker exec miner miner print_keys)
+	
+	sleep 1
+	
 	exit
 done
-
-echo "Miner ismi 6 saniye içinde gelecek..  "
-
-sleep 6
-
-echo $(docker exec miner miner print_keys)
 
 
